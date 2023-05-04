@@ -2,7 +2,7 @@ import Item from "../../components/item"
 import Link from "next/link";
 
 async function getData(params){
-    let data = await fetch(`${process.env.LOCAL_HOST}/api/data`,{
+    let data = await fetch(`${process.env.PORT}/api/data`,{
         method: "GET",
         cache: 'no-cache'
     

@@ -13,7 +13,7 @@ export const metadata = {
 }
 
 async function getData(){
-  let data = await fetch(`${process.env.LOCAL_HOST}/api/data`,{
+  let data = await fetch(`${process.env.PORT}/api/data`,{
     method: "GET",
     cache: 'no-cache'
 
@@ -53,7 +53,7 @@ async function getCategories(){
 export default async function RootLayout({ children }) {
   let data = await getCategories()
   let category = Object.keys(data)
- let categories = category.map(current => <CategoryType category={current} type={data[current]}/>)
+ let categories = category.map((current,index) => <CategoryType category={current} type={data[current]} key={index} />)
   
   return (
     <html lang="en">
