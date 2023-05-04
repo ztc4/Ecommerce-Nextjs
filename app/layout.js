@@ -13,7 +13,7 @@ export const metadata = {
 }
 
 async function getData(){
-  let data = await fetch(`${process.env.PORT}/api/data`,{
+  let data = await fetch(`${process.env.PORT}`,{
     method: "GET",
     cache: 'no-cache'
 

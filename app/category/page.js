@@ -1,7 +1,7 @@
 import Category from "../components/Category"
 
 async function getData(){
-    let data = await fetch(`${process.env.PORT}/api/data`,{
+    let data = await fetch(`${process.env.PORT}`,{
       method: "GET",
       cache: 'no-cache'
   
