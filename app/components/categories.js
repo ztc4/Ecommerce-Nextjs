@@ -5,9 +5,9 @@ import { IoMdArrowDropright} from "react-icons/io"
 import Item from "./item"
 
 function Category(props) {
-let row = props.data.map(current =>{
+let row = props.data.map((current,index) =>{
     return(
-        <Item name={current.title} price={current.price}/>
+        <Item name={current.title} price={current.price} key={index}/>
     )
 })
 

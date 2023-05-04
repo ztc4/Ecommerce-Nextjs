@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 function CategoryType({category,type}) {
     let [hover,setHover] = React.useState(false)
-  let data = type.map(current => <Link href={`category/${category}`}><div className="h-6  text-center w-24 hover:cursor-pointer  bg-gray-900">{current}</div></Link>)
+  let data = type.map((current,index) => <Link href={`category/${category}`} key={index}><div className="h-6  text-center w-24 hover:cursor-pointer  bg-gray-900">{current}</div></Link>)
   setTimeout(()=> setHover(false),5000)
 
     return ( 

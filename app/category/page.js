@@ -42,8 +42,9 @@ return categories
 export default async function Home() {
     let data = await getCategories()
     data = Object.keys(data)
-    data = data.map(current => {
-      return(<Category category={current}/>)})
+    data = data.map((current,index) => {
+      return(<Category category={current} key={index}/>)
+      })
   
    
     
