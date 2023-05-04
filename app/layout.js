@@ -4,7 +4,7 @@ import { CiShoppingCart} from "react-icons/ci";
 import {BiSearch} from "react-icons/bi"
 import Link from 'next/link';
 import CategoryType from './components/categoryType';
-import Cart from './components/cart';
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -70,7 +70,14 @@ export default async function RootLayout({ children }) {
                 <input type="search" className='bg-transparent w-10/12 h-full p-3 placeholder:ml focus:outline-none border-l-4 border-indigo-500' placeholder='Search for item'></input>
 
               </div>
-              <Cart/>
+              <Link href="/cart">
+
+                <div className='cart p-4 m-4 md:mr-8
+                  hover:bg-slate-600 bg-neutral-900 hover:cursor-pointer  
+                  h-14 w-16 lg:ml-10 bg-opacity-50' >
+                <CiShoppingCart className="p-0 h-full w-full"/>
+                </div>
+              </Link>
           </div>
           <div className='w-full bg-green-800 h-6 flex flex-row '>
             <Link href="" className='mx-3 pr-3 border-r-gray-800 border-r-2'>Home</Link>
