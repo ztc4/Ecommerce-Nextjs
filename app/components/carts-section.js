@@ -10,19 +10,17 @@ function CartSection({item}) {
 
     return ( 
         <div className="h-24 mt-6 w-full flex-row flex border-2 border-gray-2500" onClick={()=>console.log("clicked")}>
-            <Image
-            src="/iphone14.jpg"
-            width={60}
-            height={100}
-            className="h-full   p-5 basis-2/6 "
-            
-            
-            
-            />
-            <div className="flex-col justify-start flex basis-4/6 bg-sky-950 text-gray-950">
+            <div className="h-full p-4  basis-2/6 ">
+                <Image
+                src="/iphone14.jpg"
+                width={50} height={50} 
+                className="m-auto"/>
+                
+            </div>
+            <div className="flex-col justify-start pl-2 flex basis-4/6  text-gray-950">
                 <div className="flex flex-row justify-between items-start basis-full">
                     <Link href="" className="text">This is the title of the object</Link>
-                    <p className="font-semibold mr-1 mt-1">34.00</p>
+                    <p className="font-semibold mr-1 mt-0">34.00</p>
                 </div>
             </div>
 
