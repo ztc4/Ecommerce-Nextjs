@@ -1,0 +1,231 @@
+[
+    {
+        "id": 1,
+        "title":"Samsung Galaxy 23 Ultra",
+        "Description": "",
+        "price" : 1100,
+        "image": "",
+        "category": "electronics",
+        "type" : "phone"
+    },
+    {
+        "id": 2,
+        "title":"iphone 13",
+        "Description": "",
+        "price" : 600,
+        "image": "",
+        "category": "electronics",
+        "type" : "phone"
+    },
+    {
+        "id": 3,
+        "title":"Sony Earbuds",
+        "Description": "",
+        "price" : 250,
+        "image": "",
+        "category": "electronics",
+        "type" : "accessories"
+    },    {
+        "id": 4,
+        "title":"Apple Airpods",
+        "Description": "",
+        "price" : 150,
+        "image": "",
+        "category": "electronics",
+        "type" : "accesories"
+    },    {
+        "id": 5,
+        "title":"Polo Button up",
+        "Description": "",
+        "price" : 70,
+        "image": "",
+        "category": "clothing",
+        "type" : "shirt"
+    },    {
+        "id": 6,
+        "title":"Levi slim fit",
+        "Description": "",
+        "price" : 80,
+        "image": "",
+        "category": "clothing",
+        "type" : "pants"
+    },    {
+        "id": 7,
+        "title":"Nike shirt",
+        "Description": "",
+        "price" : 40,
+        "image": "",
+        "category": "clothing",
+        "type" : "shirt"
+    },    {
+        "id": 8,
+        "title":"Heart Necklace",
+        "Description": "",
+        "price" : 150,
+        "image": "",
+        "category": "jewelry",
+        "type" : "necklace"
+    },    {
+        "id": 9,
+        "title":"Polo Watch",
+        "Description": "",
+        "price" : 400,
+        "image": "",
+        "category": "jewelry",
+        "type" : "watch"
+    },    {
+        "id": 10,
+        "title":"Pandora Bracalet",
+        "Description": "",
+        "price" : 120,
+        "image": "",
+        "category": "jewelry",
+        "type" : "bracalet"
+    },    {
+        "id": 11,
+        "title":"Mother's day Necklace",
+        "Description": "",
+        "price" : 80,
+        "image": "",
+        "category": "jewelry",
+        "type" : "necklace"
+    },   {
+        "id": 12,
+        "title":"Lenovo laptop",
+        "Description": "",
+        "price" : 699,
+        "image": "",
+        "category": "electronics",
+        "type" : "computer"
+    },    {
+        "id": 13,
+        "title":"Samsung Galaxy 22 Ultra",
+        "Description": "",
+        "price" : 1100,
+        "image": "",
+        "category": "electronics",
+        "type" : "phone"
+    },
+    {
+        "id": 14,
+        "title":"iphone 14",
+        "Description": "",
+        "price" : 1200,
+        "image": "",
+        "category": "electronics",
+        "type" : "phone"
+    },
+    {
+        "id": 15,
+        "title":"Samsung Earbuds",
+        "Description": "",
+        "price" : 150,
+        "image": "",
+        "category": "electronics",
+        "type" : "accessories"
+    },    {
+        "id": 16,
+        "title":"Apple headphones",
+        "Description": "",
+        "price" : 400,
+        "image": "",
+        "category": "electronics",
+        "type" : "accesories"
+    },    {
+        "id": 17,
+        "title":"Polo t-shirt(6pack)",
+        "Description": "",
+        "price" : 50,
+        "image": "",
+        "category": "clothing",
+        "type" : "shirt"
+    },    {
+        "id": 18,
+        "title":"Levi Cargo",
+        "Description": "",
+        "price" : 110,
+        "image": "",
+        "category": "clothing",
+        "type" : "pants"
+    },    {
+        "id": 19,
+        "title":"Levi Demin Jacket",
+        "Description": "",
+        "price" : 120,
+        "image": "",
+        "category": "clothing",
+        "type" : "jacket"
+    },    {
+        "id": 20,
+        "title":"Platinum Necklace",
+        "Description": "",
+        "price" : 150,
+        "image": "",
+        "category": "jewelry",
+        "type" : "necklace"
+    },    {
+        "id": 21,
+        "title":"Polo Short",
+        "Description": "",
+        "price" : 400,
+        "image": "",
+        "category": "clothing",
+        "type" : "shorts"
+    },    {
+        "id": 22,
+        "title":"Silver Bracalet",
+        "Description": "",
+        "price" : 160,
+        "image": "",
+        "category": "jewelry",
+        "type" : "bracalet"
+    },    {
+        "id": 23,
+        "title":"Turquoise necklace",
+        "Description": "",
+        "price" : 50,
+        "image": "",
+        "category": "jewelry",
+        "type" : "necklace"
+    },   {
+        "id": 24,
+        "title":"Asus monitor",
+        "Description": "",
+        "price" : 150,
+        "image": "",
+        "category": "electronics",
+        "type" : "monitor"
+    },
+    {
+        "id": 25,
+        "title":"Asus 4k Monitor",
+        "Description": "",
+        "price" : 500,
+        "image": "",
+        "category": "electronics",
+        "type" : "monitor"
+    },
+    {
+        "id": 26,
+        "title":"Samsung Curved monitor",
+        "Description": "",
+        "price" : 300,
+        "image": "",
+        "category": "electronics",
+        "type" : "monitor"
+    },    {
+        "id": 27,
+        "title":"Apple Mac laptop",
+        "Description": "",
+        "price" : 799,
+        "image": "",
+        "category": "electronics",
+        "type" : "computer"
+    }
+
+
+
+
+
+
+]
