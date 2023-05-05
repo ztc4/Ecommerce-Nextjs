@@ -22,7 +22,12 @@ function CartSection({item}) {
             <div className="flex-col justify-start pl-2 flex basis-4/6  text-gray-950">
                 <div className="flex flex-row justify-between items-start basis-full">
                     <Link href="" className="text">This is the title of the object</Link>
-                    <p className="font-semibold mr-1 mt-0">34.00</p>
+                    <p className="font-light text-sm text-black uppercase tracking-tighter mr-1 mt-0">$34.00</p>
+                </div>
+                <div className="flex flex-row my-2 md:my-5">
+                    <div className="subtract bg-gray-400 w-8 pl-3 rounded-l-3xl cursor-pointer hover:bg-gray-800">-</div>
+                    <div className="bg-gray-400 w-12">QTY:{1 || 1}</div>
+                    <div className="add bg-gray-400 w-8 pl-3 cursor-pointer rounded-r-3xl hover:bg-gray-800">+</div>
                 </div>
             </div>
 

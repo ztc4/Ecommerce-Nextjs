@@ -7,7 +7,7 @@ function CartItems() {
     let itemsCount = false
     let total = 45 || 1
     return ( 
-        <div className="min-h-fit w-10/12 md:w-6/12 mx-auto p-5 border-4 border-gray-2500 my-5 ">
+        <div className="min-h-fit w-10/12 md:w-6/12 mx-auto p-5 border-y-2 border-gray-2500 my-5 ">
             <div className="border-gray-300 border-b-2">
                 <h5 className="w-11/12  text-2xl  font-medium text-gray-950">Shopping Cart</h5>
                 <div className="flex flex-row justify-between">

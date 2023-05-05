@@ -23,14 +23,15 @@ async function getData(params){
 export default async function CategoryPage(prop) {
     const queryparam1 = prop.params.category;
     let data = await getData(queryparam1)
-   let items = data.map((current,index) => <Item card={current} border={false} key={index}/>)
+   let items = data.map((current,index) => <Item card={current} border={false} hover={true} key={index}/>)
     
    
     
     
     return ( 
         <div className="flex min-h-screen flex-col">
-            <h1 className="hello  text-center text-slate-900 text-4xl border-b-4">{queryparam1}</h1>
+            <p className="text-gray-600 text-xs text-center tracking-tighter uppercase"> category/{queryparam1}</p>
+            <h1 className="hello  text-center text-slate-900 text-4xl mt-2 tracking-tight uppercase pb-4 border-b-4">{queryparam1}</h1>
             <div className={`flex ${items.length > 0 ?"flex-row": "flex-col" } flex-wrap justify-center`}>
                 {items.length > 0 ? items : 
                 <div className="text-4xl md:text-6xl text-slate-900 m-auto my-36">

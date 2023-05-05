@@ -1,11 +1,11 @@
 import './globals.css'
-import { Inter, } from 'next/font/google'
+import { Inter, IBM_Plex_Mono, Cormorant_Garamond, Fira_Sans_Condensed, Comme } from 'next/font/google'
 import { CiShoppingCart} from "react-icons/ci";
 import {BiSearch} from "react-icons/bi"
 import Link from 'next/link';
 import CategoryType from './components/categoryType';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Comme({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Ecommerce',
@@ -79,7 +79,7 @@ export default async function RootLayout({ children }) {
                 </div>
               </Link>
           </div>
-          <div className='w-full bg-green-800 h-6 flex flex-row '>
+          <div className='w-full bg-gray-500 h-6 flex flex-row '>
             <Link href="" className='mx-3 pr-3 border-r-gray-800 border-r-2'>Home</Link>
             <Link href="category">Categories</Link>
 

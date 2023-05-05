@@ -7,7 +7,7 @@ import Item from "./item"
 function Category(props) {
 let row = props.data.map((current,index) =>{
     return(
-        <Item card={current} border={true} key={index}/>
+        <Item card={current} border={props.border || true} key={index}/>
     )
 })
 
