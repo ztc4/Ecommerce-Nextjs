@@ -14,7 +14,9 @@ function CartSection({item}) {
                 <Image
                 src="/iphone14.jpg"
                 width={50} height={50} 
-                className="m-auto"/>
+                className="m-auto"
+                alt={"alt"}
+                />
                 
             </div>
             <div className="flex-col justify-start pl-2 flex basis-4/6  text-gray-950">
