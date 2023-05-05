@@ -23,8 +23,8 @@ async function getData(params){
 export default async function CategoryPage(prop) {
     const queryparam1 = prop.params.category;
     let data = await getData(queryparam1)
-   let items = data.map((current,index) => <Item name={current.title} price={current.price} current={current.id} key={index}/>)
-    console.log(items)
+   let items = data.map((current,index) => <Item card={current} border={false} key={index}/>)
+    
    
     
     

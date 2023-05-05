@@ -13,7 +13,7 @@ async function getData(){
 
   })
   .then( res => res.json())
-  console.log(data)
+  
   
  
   return data
@@ -70,9 +70,13 @@ export default async function Home(props,context) {
       <div className='banner flex flex-row w-10/12 h-32 border md:w-8/12 mb-9 bg-sky-950 rounded-lg md:h-48 hover:scale-105 bg-gradient-to-r from-sky-300 to-indigo-500 justify-' >
         <h6 className='basis-3/5 p-4 m-2 md:basis-10/12 md:m-auto pl-16'><span>Electronics Discount</span><br></br><span className='text-xl font-bold md:text-4xl'> Smartphones</span><br></br><span className='indent-2 text-sm'> Up to 80% OFF</span></h6>
         <Image
-        className='basis-2/5 p-4 m-2'
-        src=""
+        className='basis-2/5 p-4 m-2 rotate-45'
+        width={100}
+        height={80}
+        quality={100}
+        src="/galaxyWatch.webp"
         alt="phone image"
+        
         
         ></Image>
 

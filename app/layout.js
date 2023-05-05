@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, } from 'next/font/google'
 import { CiShoppingCart} from "react-icons/ci";
 import {BiSearch} from "react-icons/bi"
 import Link from 'next/link';

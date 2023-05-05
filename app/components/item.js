@@ -1,33 +1,34 @@
-"use client";
+
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-function Item(props) {
-    const [price,setPrice ] = React.useState(1)
-    function changePrice(){
-        setPrice( current => current + 1)
-    }
+function Item({card ,border}) {
+    
+
     return (  
-        <div className="card h-56 w-48 md:w-56
-        md:h-72 shrink-0 flex flex-col bg-gray-200  rounded-lg border-y-4 border-y-rose-400 border-e-4 border-4 border-x-amber-400 m-4 hover:cursor-pointer">
+        <Link href={`category/${card.category}`} className={ border ?`card h-56  w-48 md:w-56
+        md:h-72 shrink-0 flex flex-col bg-gray-200  rounded-lg  m-4 hover:cursor-pointer hover:scale-105 overflow-hidden rounded-lg border-y-4 border-y-rose-400 border-e-4 border-4 border-x-amber-400`: `card h-56  w-48 md:w-56
+        md:h-72 shrink-0 flex flex-col bg-gray-200  rounded-lg  m-4 hover:cursor-pointer overflow-hidden`} >
             <Image 
-            src={"/iphone14.jpg"}
-            width={80}
-            height={80}
-            className="basis-9/12 mx-auto"
-            alt={"red"}
-            ></Image>
-            <div className="basis-3/12 flex flex-col bg-gray-300 p-4">
-                <h5 className="text-black font-extrabold letter tracking-widest">{props.name || "name"}</h5>
-                <p className="text-gray-700 text-sm" onClick={changePrice}>Price: {props.price || price}</p>
+                    src={`/${card.image}.jpg` || `/${card.image}.avif`}
+                    height={224}
+                    width={192}
+                    
+                    style={{objectFit: "scale-down"}}
+                    className="mx-auto actual-image basis-6/12 max-h-36 "
+            alt={card.title}></Image>
+            <div className="basis-6/12 flex flex-col bg-gray-300 p-4 ">
+                <h5 className="text-black font-extrabold letter tracking-widest w-full text-ellipsis">{card.title || "name"}</h5>
+                <p className="text-gray-700 text-sm" >Price: {card.price}</p>
 
             </div>
         
 
             
 
-        </div>
-    );
-}
+        </Link>
+        
+    )}
 
 export default Item;
