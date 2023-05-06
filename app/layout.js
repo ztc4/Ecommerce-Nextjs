@@ -18,6 +18,10 @@ async function getData(){
     cache: 'no-cache'
 
   })
+  .then(res=> {
+    console.log(res)
+    return res
+  })
   .then( res => res.json())
  
  

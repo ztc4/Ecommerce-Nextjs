@@ -7,7 +7,7 @@ import Category from './components/categories';
 import Panel from './components/panel';
 
 async function getData(){
-  let data = await fetch(`https://nameless-sierra-64099.herokuapp.com/`,{
+  let data = await fetch(`${process.env.PORT}`,{
     method: "GET",
     cache: 'no-cache'
 
