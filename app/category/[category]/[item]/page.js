@@ -81,7 +81,7 @@ async function ItemPage(props) {
                             
                         </section>
                     </div>
-                    <div className="flex-col flex basis-4/12 md:w-96 m-4 md:m-14 ">
+                    <div className="flex-col flex basis-4/12 screenadd m-4 md:m-14 ">
                         <p className="text-gray-400 tracking-tighter -mb-1 lowercase">{data.seller}</p>
                         <p className="text-gray-950 text-lg  md:text-2xl whitespace-nowrap tracking-widest capitalize">{data.title}</p>
                         <p className=" text-gray-800 mt-8">${data.price}</p>
