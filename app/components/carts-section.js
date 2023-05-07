@@ -4,21 +4,26 @@ import Link from "next/link";
 import React from "react"
 import Cookies from "js-cookie";
 
-function CartSection({data, newRender}) {
+function CartSection({data, changeTotal}) {
     const[item, setItem] = React.useState(data)
 
     function addQuantity(){
        setItem(current => ({...current,quantity: current.quantity += 1}))
        save()
-       newRender()
+    changeTotal(item.price)
+       
        return console.log("add "+ item.quantity)
 
     }
      function subtractQuantity(){
        
-        if(item.quantity >= 2){setItem(current => ({...current,quantity: current.quantity-=1}))}
-        save()
-        newRender()
+        if(item.quantity >= 2){
+            setItem(current => ({...current,quantity: current.quantity-=1}))
+            save()
+            changeTotal(-item.price)
+        
+        }
+   
         
         return console.log("subtract " + item.quantity)
 
@@ -37,10 +42,28 @@ function CartSection({data, newRender}) {
             .then( ()=> setItem(current => ({...current,quantity: current.quantity--})))
 
     }
+    async function deleteItem(){
+        let price = item.quantity * item.price
+        setItem(current => ({...current,quantity: 0}))
+        console.log(item)
+        await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/${Cookies.get("id")}/edit`,{
+                method: "PUT", 
+                cache: 'no-cache',
+                headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify({...item,quantity: 0}),
+
+            })
+            .then( res => console.log(res))
+            .then(()=> changeTotal(-price))
+
+    }
 
 
     return ( 
-        <div className="h-24 mt-6 w-full flex-row flex border-2 border-gray-2500" >
+        <div className={`h-24 mt-6 border-2 border-gray-2500 w-full flex flex-row`} id={item.quantity == 0 && "deleteItem"} onDoubleClick={deleteItem} >
             <div className="h-full p-4  basis-2/6 ">
                 <Image
                 src={`/${data.image}.jpg`}
@@ -60,7 +83,9 @@ function CartSection({data, newRender}) {
                     <div className="bg-gray-400 w-12" >QTY:{item.quantity}</div>
                     <div className="add bg-gray-400 w-8 pl-3 cursor-pointer rounded-r-3xl hover:bg-gray-800" onClick={()=>addQuantity()}>+</div>
                 </div>
+              
             </div>
+
 
         </div>
      );

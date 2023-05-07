@@ -12,17 +12,17 @@ async function Success() {
         let data =  await fetch(`https://nameless-sierra-64099.herokuapp.com/cart/${Cookies.get("id")}/success`,{
             method:"DELETE"
         })
-        .then(res => res)
+        .then(res => console.log(res))
         
       
         return data}
     useEffect(()=>{
-        deleteItems
+        deleteItems()
 
 
     },[])
     return ( 
-        <div className=" bg-gray-300 flex justify-center items-center">
+        <div className=" bg-gray-300 flex min-h-screen  justify-center items-center">
             <h1 className="text-4xl text-gray-900 tracking-tighter uppercase font-light">Successfully Payed for Items</h1>
 
         </div>

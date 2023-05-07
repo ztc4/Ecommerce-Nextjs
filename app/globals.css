@@ -46,3 +46,6 @@ body {
   
   width: 600px;
 } */
+#deleteItem{
+  display: none;
+}

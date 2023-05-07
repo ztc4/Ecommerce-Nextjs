@@ -9,13 +9,10 @@ function CartItems() {
     
 let [info,setInfo] = React.useState();
 let components;
-let total = 0;
-let items = 0;
-let [render,rerender] = useState(0)
-function newRender(){
-    console.log(render)
-   rerender(current => current += 1)
-}
+
+
+let [total,setTotal] = useState(0)
+
 
 React.useEffect(function(){
     getCartItems()
@@ -26,27 +23,32 @@ React.useEffect(function(){
     let data =  await fetch(`https://nameless-sierra-64099.herokuapp.com/cart/${Cookies.get("id")}`)
     .then(res => res.json())
     .then(res => res)
+    console.log(data)
+    setTotal(data.totalprice)
+    console.log(total)
     setInfo(data.items)
     return data}
     
-    
-    
-    
+
+function changeTotal(price){
+    setTotal( current => current += price)
+
+}
     
   
     // rr =data.items
     
  if(info){
     components = info.map((current,index) => {
-       total += current.price *current.quantity
-       items += current.quantity
+
     
-    return <CartSection data={current} newRender={newRender} key={index}/>})
+    return <CartSection data={current} index={index} changeTotal={changeTotal}   key={index}/>})
+    console.log("components" + components)
+    console.log(typeof components == "object")
 
  }
 
 
-console.log(total)
 
 
     return ( 
@@ -54,17 +56,17 @@ console.log(total)
             <div className="border-gray-300 border-b-2">
                 <h5 className="w-11/12  text-2xl  font-medium text-gray-950">Shopping Cart</h5>
                 <div className="flex flex-row justify-between">
-                    <p className="text-emerald-600">Select all items</p>
+                    <p className="text-emerald-600">double click to delete</p>
                     <p className="text-gray-950"> Price</p>
                 </div>
             </div>
-            {components ||
-            <p className="text-gray-950 text-xl"> This is currently nothing in the cart</p>
+            {components}
+            {typeof components == "object" || <p className="text-gray-950 text-xl mt-8"> There is currently nothing in the cart</p>
             
             }
 
             <div className="border-gray-300 mt-8 border-t-2 w-full flex justify-end ">
-                <p className="text-gray-950">Subtotal({ items + " items"}): <span className="font-bold">${total}</span></p>
+                <p className="text-gray-950">Subtotal({ 7 + " items"}): <span className="font-bold">${total}</span></p>
 
             </div>
             {components &&
