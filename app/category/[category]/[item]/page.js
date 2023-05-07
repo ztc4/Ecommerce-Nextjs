@@ -2,6 +2,11 @@ import Image from "next/image"
 import AddCart from "@/app/components/addCart"
 import Item from "@/app/components/item"
 
+export const metadata = {
+    title: `items`,
+    description: 'items page',
+  }
+
 async function getData(params){
     console.log(params)
     let data = await fetch(`${process.env.PORT}/${params}`,{
@@ -18,6 +23,7 @@ async function getData(params){
     return data[0]
     
   }
+  
   async function getRecommend(type,name){
     
     let recommend;

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import CartSection from "./carts-section";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 function CartItems() { 
     
@@ -27,6 +28,7 @@ React.useEffect(function(){
     .then(res => res)
     setInfo(data.items)
     return data}
+    
     
     
     
@@ -56,12 +58,21 @@ console.log(total)
                     <p className="text-gray-950"> Price</p>
                 </div>
             </div>
-            {components}
+            {components ||
+            <p className="text-gray-950 text-xl"> This is currently nothing in the cart</p>
+            
+            }
 
             <div className="border-gray-300 mt-8 border-t-2 w-full flex justify-end ">
                 <p className="text-gray-950">Subtotal({ items + " items"}): <span className="font-bold">${total}</span></p>
 
             </div>
+            {components &&
+            <div className="flex flex-row justify-end">
+                <Link href="/cart/checkout" className="text-gray-950 mt-12 text-right bg-amber-200">Proceed to checkout</Link>
+            </div>
+            
+            }
             
             
         

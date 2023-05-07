@@ -1,4 +1,8 @@
 import Category from "../components/Category"
+export const metadata = {
+  title: 'Category',
+  description: 'Sorting items by categories',
+}
 
 async function getData(){
     let data = await fetch(`${process.env.PORT}`,{
