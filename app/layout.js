@@ -19,7 +19,7 @@ async function getData(){
 
   })
   .then(res=> {
-    console.log(res)
+    
     return res
   })
   .then( res => res.json())

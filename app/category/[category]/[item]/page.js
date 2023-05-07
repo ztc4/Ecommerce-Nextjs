@@ -90,7 +90,7 @@ async function ItemPage(props) {
                         <p className="text-gray-800  uppercase">{data.category}</p>
                         <p className="  text-gray-400 mt-2">Type:</p>
                         <p className="text-gray-800 pb-8 border-b-2 uppercase">{data.type}</p>
-                        <AddCart/>
+                        <AddCart data={data}/>
                         
 
                     </div>

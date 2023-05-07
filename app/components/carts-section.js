@@ -2,32 +2,63 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react"
+import Cookies from "js-cookie";
 
-function CartSection({item}) {
-    // const[setItem, Item] = React.useState({
-    //     title: title,price: price, quantity
-    // })
+function CartSection({data, newRender}) {
+    const[item, setItem] = React.useState(data)
+
+    function addQuantity(){
+       setItem(current => ({...current,quantity: current.quantity += 1}))
+       save()
+       newRender()
+       return console.log("add "+ item.quantity)
+
+    }
+     function subtractQuantity(){
+       
+        if(item.quantity >= 2){setItem(current => ({...current,quantity: current.quantity-=1}))}
+        save()
+        newRender()
+        
+        return console.log("subtract " + item.quantity)
+
+    }
+    async function save(){
+        await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/${Cookies.get("id")}/edit`,{
+                method: "PUT", 
+                cache: 'no-cache',
+                headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify(item),
+
+            })
+            .then( ()=> setItem(current => ({...current,quantity: current.quantity--})))
+
+    }
+
 
     return ( 
-        <div className="h-24 mt-6 w-full flex-row flex border-2 border-gray-2500" onClick={()=>console.log("clicked")}>
+        <div className="h-24 mt-6 w-full flex-row flex border-2 border-gray-2500" >
             <div className="h-full p-4  basis-2/6 ">
                 <Image
-                src="/iphone14.jpg"
+                src={`/${data.image}.jpg`}
                 width={50} height={50} 
                 className="m-auto"
-                alt={"alt"}
+                alt={data.title}
                 />
                 
             </div>
             <div className="flex-col justify-start pl-2 flex basis-4/6  text-gray-950">
                 <div className="flex flex-row justify-between items-start basis-full">
-                    <Link href="" className="text">This is the title of the object</Link>
-                    <p className="font-light text-sm text-black uppercase tracking-tighter mr-1 mt-0">$34.00</p>
+                    <Link href={``} className="text">{item.title}</Link>
+                    <p className="font-light text-sm text-black uppercase tracking-tighter mr-1 mt-0">${item.price}</p>
                 </div>
                 <div className="flex flex-row my-2 md:my-5">
-                    <div className="subtract bg-gray-400 w-8 pl-3 rounded-l-3xl cursor-pointer hover:bg-gray-800">-</div>
-                    <div className="bg-gray-400 w-12">QTY:{1 || 1}</div>
-                    <div className="add bg-gray-400 w-8 pl-3 cursor-pointer rounded-r-3xl hover:bg-gray-800">+</div>
+                    <div className="subtract bg-gray-400 w-8 pl-3 rounded-l-3xl cursor-pointer hover:bg-gray-800" onClick={()=>subtractQuantity()}>-</div>
+                    <div className="bg-gray-400 w-12" >QTY:{item.quantity}</div>
+                    <div className="add bg-gray-400 w-8 pl-3 cursor-pointer rounded-r-3xl hover:bg-gray-800" onClick={()=>addQuantity()}>+</div>
                 </div>
             </div>
 
