@@ -7,14 +7,14 @@ function CategoryType({category,type}) {
   setTimeout(()=> setHover(false),5000)
 
     return ( 
-        <div >
+        <Link href={`/category/${category}`}>
             <div className="h-6 w-24  bg-gray-900 hover:bg-cyan-700 hover:cursor-pointer" onMouseEnter={()=> setHover(true)} >
-                <Link href={`/category/${category}`}><p className="text-center">{category}</p></Link>
+                <p className="text-center">{category}</p>
 
             </div>
             {hover && data}
 
-        </div>
+        </Link>
      );
 }
 
