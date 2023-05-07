@@ -3,7 +3,7 @@ import React, {useEffect,useState} from "react"
 import Cookies from "js-cookie"
 import SummaryItem from "@/app/components/summaryItem"
 import {IoMdArrowDropright,IoMdArrowDropdown} from "react-icons/io"
-import { useNavigate } from "react-router"
+
 
 function Checkout() {
     // const navigate = useNavigate()
