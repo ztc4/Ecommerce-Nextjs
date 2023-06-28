@@ -12,7 +12,7 @@ function CategoryType({category,type}) {
                 <p className="text-center">{category}</p>
 
             </div>
-            {hover && data}
+            {/* {hover && data} */}
 
         </Link>
      );

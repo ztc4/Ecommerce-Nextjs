@@ -1,13 +1,18 @@
-
-
+'use client';
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import Link from "next/link";
 
 function Item({card ,border}) {
+    const { push } = useRouter()
+    function redirect(){
+        push(`category/${card.category}/${card.id}`)
+
+    }
     
 
     return (  
-        <Link href={`category/${card.category}/${card.id}`} className={ border ?`card h-56  w-48 md:w-56
+        <div  onClick={redirect}href={`category/${card.category}/${card.id}`} className={ border ?`card h-56  w-48 md:w-56
         md:h-72 shrink-0 flex flex-col bg-gray-200  rounded-lg  m-4 hover:cursor-pointer hover:scale-105 overflow-hidden  border-y-4 border-y-rose-400 border-e-4 border-4 border-x-amber-400`: `card h-56  w-48 md:w-56
         md:h-72 shrink-0 flex flex-col bg-gray-200  rounded-lg  m-4 hover:cursor-pointer overflow-hidden hover:scale-105`} >
             <Image 
@@ -27,7 +32,7 @@ function Item({card ,border}) {
 
             
 
-        </Link>
+        </div>
         
     )}
 

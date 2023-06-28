@@ -17,7 +17,7 @@ let row = props.data.map((current,index) =>{
                 <h3 className="font-medium md:text-xl">{props.header || "Grab the best deals on"} <span className="category-type text-lg font-bold text-blue-700">{props.item || "Smartphone"}</span></h3>
                 <Link href={`category/${props.category}`} className="flex flex-row md:text-xl justify-center">View all<IoMdArrowDropright className="m-auto text-blue-700 text-2xl animate-bounce"/></Link>
             </div>
-            <div className="item-holder  flex flex-row overflow-hidden hover:overflow-x-auto p-2 shrink-0 outline-none border-none scroll-m-2">
+            <div className="item-holder  flex flex-row sm:overflow-hidden hover:overflow-x-auto p-2 shrink-0 outline-none border-none scroll-m-2">
               
                { row || prop.items}
 

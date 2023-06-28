@@ -16,6 +16,7 @@ let [total,setTotal] = useState(0)
 
 React.useEffect(function(){
     getCartItems()
+    console.log(info)
 
 },[])
   async function getCartItems(){
@@ -36,7 +37,7 @@ function changeTotal(price){
 }
     
   
-    // rr =data.items
+    console.log(info)
     
  if(info){
     components = info.map((current,index) => {
@@ -61,12 +62,12 @@ function changeTotal(price){
                 </div>
             </div>
             {components}
-            {typeof components == "object" || <p className="text-gray-950 text-xl mt-8"> There is currently nothing in the cart</p>
+            {!components || <p className="text-gray-950 text-xl mt-8"> There is currently nothing in the cart</p>
             
             }
 
             <div className="border-gray-300 mt-8 border-t-2 w-full flex justify-end ">
-                <p className="text-gray-950">Subtotal({ 7 + " items"}): <span className="font-bold">${total}</span></p>
+                <p className="text-gray-950">Subtotal({info && info.length > 0 ?`${info.length} items` : "0 items" }): <span className="font-bold">${total}</span></p>
 
             </div>
             {components &&
