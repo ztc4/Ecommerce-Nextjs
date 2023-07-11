@@ -60,7 +60,7 @@ function AddCart({data}) {
         .then( res => res.json())
         .then(res => Cookies.set("id",res._id) )
 
-        checkid()
+        checkid(item)
 
         
     }

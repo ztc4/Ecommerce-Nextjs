@@ -62,7 +62,7 @@ function changeTotal(price){
                 </div>
             </div>
             {components}
-            {!components || <p className="text-gray-950 text-xl mt-8"> There is currently nothing in the cart</p>
+            {!components ? <p className="text-gray-950 text-xl mt-8"> There is currently nothing in the cart</p>: ""
             
             }
 
