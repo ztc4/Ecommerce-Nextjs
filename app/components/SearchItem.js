@@ -24,6 +24,7 @@ function SearchItem() {
       }
 
 
+
     const [currentSearch,setSearch] = React.useState("")
 
     function query(){
@@ -32,7 +33,7 @@ function SearchItem() {
     }
 
     async function getData(){
-        items = await fetch(`http://localhost:5000/search/?search=${currentSearch}`,{
+        items = await fetch(`https://nameless-sierra-64099.herokuapp.com/search/?search=${currentSearch}`,{
           method: "GET",
           cache: 'no-cache'
       
@@ -67,9 +68,8 @@ function SearchItem() {
         return (
         <div key={item.title} className={`search flex-nowrap flex flex-col  justify-center hover:cursor-pointer  h-12  w-12/12 md:w-12/12 
         ${(items.length == 1 && index == 0) && "mt-4 mb-4" || 
-        index == 0 && "mt-4" || 
-        index == items.length -1 && "mb-5"   }
-          hover:bg-slate-500`} onClick={()=> redirect(item)} >
+        index == 0 && "mt-4" }
+          hover:bg-slate-500`} onClick={item.Itemtype == "item" ?()=> redirect(item): ()=> query() } >
             <h1 className="ml-4">{item.Itemtype == "type" ? "Go to ": ""}{item.title}</h1>
         </div> 
           )  
@@ -89,6 +89,14 @@ function SearchItem() {
                 <div className="flex-nowrap flex mx-auto flex-col relative w-12/12 md:w-8/12 z-50 -mt-2  bg-blue-500 rounded-xl justify-center">
 
                         { currentSearch !==  ""&& active && currentSearchItems}
+                        { currentSearch !==  ""&& active &&
+
+                        <div  className={`search flex-nowrap flex flex-col  justify-center hover:cursor-pointer  h-12  w-12/12 md:w-12/12`}
+                          onClick={Deactivate} >
+                            <h1 className="ml-4 hover:text-red-900 uppercase">Close</h1>
+                          </div>  
+                        
+                        }
                         
                             
 
