@@ -4,6 +4,7 @@ import { CiShoppingCart} from "react-icons/ci";
 import {BiSearch} from "react-icons/bi"
 import Link from 'next/link';
 import CategoryType from './components/categoryType';
+import SearchItem from './components/SearchItem';
 
 const inter = Comme({ subsets: ['latin'] })
 
@@ -67,13 +68,7 @@ export default async function RootLayout({ children }) {
       <div className="min-w-full h-fit mb-6">
           <div className='flex w-full flex-row justify-between bg-gray-700 align-top content-center h-20'>
               <div className='logo p-4 m-4 hover:bg-slate-600 bg-neutral-900 cursor-pointer h-14 w-16 lg:ml-10 bg-opacity-50 md:ml-20' ></div>
-              <div className="search flex-nowrap flex flex-row bg-gray-500 h-14 m-4 md:w-4/12">
-          
-                <BiSearch className='w-2/12 h-full m-auto p-3 bg-transparent cursor-pointer hover:bg-zinc-900 '/>
-          
-                <input type="search" className='bg-transparent w-10/12 h-full p-3 placeholder:ml focus:outline-none border-l-4 border-indigo-500' placeholder='Search for item'></input>
-
-              </div>
+               <SearchItem/>
               <Link href="/cart">
 
                 <div className='cart p-4 m-4 md:mr-8
