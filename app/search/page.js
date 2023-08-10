@@ -1,10 +1,9 @@
 
-import { Link } from "react-router-dom"
 import Category from "../components/Category"
 import Item from "../components/item"
 export const metadata = {
   title: 'Search',
-  description: 'Sorting items by categories',
+  description: 'The searched items ',
 }
 
 async function getSearch(query){
