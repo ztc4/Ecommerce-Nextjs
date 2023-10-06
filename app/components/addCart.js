@@ -21,7 +21,7 @@ function AddCart({data}) {
         try{
             console.log("checking id")
             console.log(Cookies.get("id"))
-        let data = await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/${Cookies.get("id")}`,{
+        let data = await fetch(`${"https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/"}/cart/${Cookies.get("id")}`,{
             method: "GET",
             cache: 'no-cache',
           
@@ -37,7 +37,7 @@ function AddCart({data}) {
         
         if(item){
             console.log("adding item")
-            await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/${Cookies.get("id")}/edit`,{
+            await fetch(`${"https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/"}/cart/${Cookies.get("id")}/edit`,{
                 method: "PUT", 
                 cache: 'no-cache',
                 headers: {
@@ -52,7 +52,7 @@ function AddCart({data}) {
         }
     catch(e){
         
-        let data = await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/create`,{
+        let data = await fetch(`${"https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/"}/cart/create`,{
             method: "POST",
             cache: 'no-cache'
         

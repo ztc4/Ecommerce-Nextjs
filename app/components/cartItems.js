@@ -21,7 +21,7 @@ React.useEffect(function(){
 },[])
   async function getCartItems(){
     console.log(Cookies.get("id"))
-    let data =  await fetch(`https://nameless-sierra-64099.herokuapp.com/cart/${Cookies.get("id")}`)
+    let data =  await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/cart/${Cookies.get("id")}`)
     .then(res => res.json())
     .then(res => res)
     console.log(data)
@@ -35,9 +35,22 @@ function changeTotal(price){
     setTotal( current => current += price)
 
 }
-    
+function removeDecimalPast2(number){
+
+        number = number.toString()
   
-    console.log(info)
+        let array = number.split(".")
+        console.log(8,array)
+        console.log(array[1]?.length)
+        if(array[1]?.length > 2){
+            array[1] = array[1].slice(0,2)
+        }
+      return  array.join(".")
+    
+
+}
+    
+removeDecimalPast2(total)
     
  if(info){
     components = info.map((current,index) => {
@@ -57,7 +70,7 @@ function changeTotal(price){
             <div className="border-gray-300 border-b-2">
                 <h5 className="w-11/12  text-2xl  font-medium text-gray-950">Shopping Cart</h5>
                 <div className="flex flex-row justify-between">
-                    <p className="text-emerald-600">double click to delete</p>
+                    <p className="text-emerald-600">double click on items to delete</p>
                     <p className="text-gray-950"> Price</p>
                 </div>
             </div>
@@ -67,12 +80,12 @@ function changeTotal(price){
             }
 
             <div className="border-gray-300 mt-8 border-t-2 w-full flex justify-end ">
-                <p className="text-gray-950">Subtotal({info && info.length > 0 ?`${info.length} items` : "0 items" }): <span className="font-bold">${total}</span></p>
+                <p className="text-gray-950">Subtotal({info && info.length > 0 ?`${info.length} items` : "0 items" }): <span className="font-bold">${removeDecimalPast2(total)}</span></p>
 
             </div>
             {components &&
             <div className="flex flex-row justify-end">
-                <Link href="/cart/checkout" className="text-gray-950 mt-12 text-right bg-amber-200">Proceed to checkout</Link>
+                <Link href="/cart/checkout" className="text-gray-950 p-4 duration-500 hover:scale-110 mt-12 text-right bg-amber-200">Proceed to checkout</Link>
             </div>
             
             }

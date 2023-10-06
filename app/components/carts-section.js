@@ -29,7 +29,7 @@ function CartSection({data, changeTotal}) {
 
     }
     async function save(){
-        await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/${Cookies.get("id")}/edit`,{
+        await fetch(`${"https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/"}/cart/${Cookies.get("id")}/edit`,{
                 method: "PUT", 
                 cache: 'no-cache',
                 headers: {
@@ -46,7 +46,7 @@ function CartSection({data, changeTotal}) {
         let price = item.quantity * item.price
         setItem(current => ({...current,quantity: 0}))
         console.log(item)
-        await fetch(`${"https://nameless-sierra-64099.herokuapp.com"}/cart/${Cookies.get("id")}/edit`,{
+        await fetch(`${"https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/"}/cart/${Cookies.get("id")}/edit`,{
                 method: "PUT", 
                 cache: 'no-cache',
                 headers: {

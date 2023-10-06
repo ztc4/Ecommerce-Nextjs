@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 async function getSearch(query){
-    let items = await fetch(`https://nameless-sierra-64099.herokuapp.com/query/?search=${query}`,{
+    let items = await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev//query/?search=${query}`,{
       method: "GET",
       cache: 'no-cache'
   
