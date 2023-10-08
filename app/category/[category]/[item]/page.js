@@ -27,7 +27,7 @@ async function getData(params){
   async function getRecommend(type,name){
     
     let recommend;
-    let data = await fetch(`${process.env.PORT}`,{
+    let data = await fetch(`${process.env.PORT}/data`,{
         method: "GET",
         cache: 'no-cache'
     

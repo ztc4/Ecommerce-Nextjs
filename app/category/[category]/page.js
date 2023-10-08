@@ -2,13 +2,13 @@ import Item from "../../components/item"
 import Link from "next/link";
 
 async function getData(params){
-    let data = await fetch(`${process.env.PORT}`,{
+    let data = await fetch(`${process.env.PORT}/data`,{
         method: "GET",
         cache: 'no-cache'
     
       })
       .then( res => res.json())
-      .then( data => data.filter( current => current.category == params))
+      .then( data => {console.log(data);return data.filter( current => current.category == params)})
       
     
    

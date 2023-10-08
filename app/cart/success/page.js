@@ -9,7 +9,7 @@ async function Success() {
 
     async function deleteItems(){
         
-        let data =  await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev//cart/${Cookies.get("id")}/success`,{
+        let data =  await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/cart/${Cookies.get("id")}/success`,{
             method:"DELETE"
         })
         .then(res => console.log(res))

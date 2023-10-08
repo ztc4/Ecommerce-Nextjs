@@ -33,7 +33,7 @@ function SearchItem() {
     }
 
     async function getData(){
-        items = await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev//search/?search=${currentSearch}`,{
+        items = await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/search/?search=${currentSearch}`,{
           method: "GET",
           cache: 'no-cache'
       

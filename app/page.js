@@ -7,7 +7,7 @@ import Category from './components/categories';
 import Panel from './components/panel';
 
 async function getData(){
-  let data = await fetch(`${process.env.PORT}`,{
+  let data = await fetch(`${process.env.PORT}/data`,{
     method: "GET",
     cache: 'no-cache'
 

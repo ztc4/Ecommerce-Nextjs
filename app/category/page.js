@@ -5,7 +5,7 @@ export const metadata = {
 }
 
 async function getData(){
-    let data = await fetch(`${process.env.PORT}`,{
+    let data = await fetch(`${process.env.PORT}/data`,{
       method: "GET",
       cache: 'no-cache'
   

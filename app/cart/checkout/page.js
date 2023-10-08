@@ -21,7 +21,7 @@ function Checkout() {
     //get Items function
       async function getCartItems(){
         console.log(Cookies.get("id"))
-        let data =  await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev//cart/${Cookies.get("id")}`)
+        let data =  await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/cart/${Cookies.get("id")}`)
         .then(res => res.json())
         .then(res => res)
         console.log(data)
@@ -66,7 +66,7 @@ function Checkout() {
     async function checkout(){
         console.log("checkout")
      
-         let data= await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev//cart/${Cookies.get("id")}/checkout`,{
+         let data= await fetch(`https://bnwvz86ty1.execute-api.us-east-1.amazonaws.com/dev/cart/${Cookies.get("id")}/checkout`,{
             method:"POST",
             headers:{
                 Accept: "application/json"
